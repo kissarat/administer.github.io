@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Taras Labiak & Victor Gurin</title>
-    <meta property="og:url" content="https://www.facebook.com/viktor.gurin.56"/>
-    <meta property="og:image" content="//i.imgur.com/ZnbzBuh.jpg"/>
+    <title>G-Service: Ремонт комп'ютерів</title>
     <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans" rel="stylesheet"/>
     <style>
         body {
@@ -13,6 +11,7 @@
             align-items: center;
             min-height: 100vh;
             font-family: 'Lato', 'Noto Sans', sans-serif;
+            color: white;
         }
 
         header {
@@ -20,30 +19,91 @@
             top: 0;
             right: 0;
             left: 0;
-            /*line-height: 44px;*/
-            height: 44px;
             /*background-color: #00e0c6;*/
-            /*background-color: #2ebaeb;*/
-            background-color: red;
-            color: white;
+            height: 160px;
+            color: black;
+        }
+
+        h1 {
+            margin-top: 30px;
+            margin-left: 40px;
+            font-size: 34px;
+            color: #134e63;
+        }
+
+        h1 span {
+            color: #00e0c6 !important;
+        }
+
+        header .blue {
+            height: 44px;
+            background-color: #2ebaeb;
+        }
+
+        #background {
+            position: fixed;
+            width: 100vw;
+            top: 160px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url("https://ld-wp.template-help.com/wordpress_59024/wp-content/uploads/2016/09/slider-1.jpg") center;
+            background-size: cover;
+        }
+
+        #slogan {
+            font-size: 34px;
+            font-weight: 300;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+
+        #slogan .uppercase {
+            font-size: 48px;
+            font-weight: 700;
+            margin-top: 37px;
         }
 
         img {
             display: none;
         }
 
-        span {
+        #developer {
             position: fixed;
+            display: none;
             bottom: 10px;
             left: calc(50% - 80px);
+        }
+
+        #make {
+            display: inline-block;
+            text-decoration: none;
+            line-height: 72px;
+            width: 316px;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin: 55px 0;
+            background-color: #2ebaeb;
+            color: white;
         }
     </style>
 </head>
 <body>
-<header></header>
-<h1>Hardware Shop</h1>
-<img src="//i.imgur.com/ZnbzBuh.jpg"/>
-<span>
+<header>
+    <div class="blue"></div>
+    <h1><span>G</span>-Сервіс</h1>
+</header>
+<div id="slogan">
+    <div>Що ми можемо</div>
+    <div class="uppercase">вам полагодити сьогодні?</div>
+    <a id="make" href="http://g-service.net">Записатися</a>
+</div>
+<div id="background"></div>
+<span id="developer">
     Developed by
     <a href="https://www.facebook.com/kissarat">Taras Labiak</a>
 </span>
