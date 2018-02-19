@@ -3,99 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>G-Service: Ремонт комп'ютерів</title>
+    <meta name="author" content="Taras Labiak <kissarat@gmail.com>"/>
     <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans" rel="stylesheet"/>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: 'Lato', 'Noto Sans', sans-serif;
-            color: white;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: 0;
-            /*background-color: #00e0c6;*/
-            height: 160px;
-            color: black;
-        }
-
-        h1 {
-            margin-top: 30px;
-            margin-left: 40px;
-            font-size: 34px;
-            color: #134e63;
-        }
-
-        h1 span {
-            color: #00e0c6 !important;
-        }
-
-        header .blue {
-            height: 44px;
-            background-color: #2ebaeb;
-        }
-
-        #background {
-            position: fixed;
-            width: 100vw;
-            top: 160px;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: url("https://ld-wp.template-help.com/wordpress_59024/wp-content/uploads/2016/09/slider-1.jpg") center;
-            background-size: cover;
-        }
-
-        #slogan {
-            font-size: 34px;
-            font-weight: 300;
-            text-align: center;
-            z-index: 1;
-        }
-
-        .uppercase {
-            text-transform: uppercase;
-        }
-
-        #slogan .uppercase {
-            font-size: 48px;
-            font-weight: 700;
-            margin-top: 37px;
-        }
-
-        img {
-            display: none;
-        }
-
-        #developer {
-            position: fixed;
-            display: none;
-            bottom: 10px;
-            left: calc(50% - 80px);
-        }
-
-        #make {
-            display: inline-block;
-            text-decoration: none;
-            line-height: 72px;
-            width: 316px;
-            font-size: 16px;
-            text-transform: uppercase;
-            margin: 55px 0;
-            background-color: #2ebaeb;
-            color: white;
-        }
-    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
 <header>
     <div class="blue"></div>
-    <h1><span>G</span>-Сервіс</h1>
+    <nav>
+        <h1><span>G</span>-Сервіс</h1>
+        <span id="under-development">
+            <i class="zmdi zmdi-alert-triangle"></i>
+            Сайт знаходиться в розробці
+        </span>
+    </nav>
 </header>
 <div id="slogan">
     <div>Що ми можемо</div>
