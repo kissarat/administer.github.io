@@ -50,6 +50,8 @@ const gservice = new Vue({
         send() {
             saveForm()
             send(`${this.name} <${this.email}>    ${this.text}`)
+            alert("Спасибі, незабаром ми зв'яжемось з вами")
+            this.contact = false
         }
     }
 })
