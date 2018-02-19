@@ -21,7 +21,6 @@ header {
 
 header .blue {
     height: 44px;
-    background-color: #2ebaeb;
 }
 
 #background {
@@ -56,15 +55,23 @@ header .blue {
 
 #make {
     display: inline-block;
-    /*visibility: hidden;*/
-    text-decoration: none;
     line-height: 72px;
     width: 316px;
+    margin: 55px 0;
+}
+
+button {
     font-size: 16px;
     text-transform: uppercase;
-    margin: 55px 0;
-    background-color: #2ebaeb;
+    background-color: #00e0c6;
+    border: none;
     color: white;
+    cursor: pointer;
+}
+
+#contact button {
+    margin-top: 8px;
+    line-height: 28px;
 }
 
 #developer {
@@ -93,5 +100,43 @@ h1 {
 }
 
 h1 span {
-    color: #00e0c6 !important;
+    color: #00e0c6;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    margin-top: 55px;
+}
+
+#contact > input, #contact > textarea {
+    margin-top: 8px;
+    /*border: 1px solid black;*/
+    border: none;
+    padding: 4px;
+}
+
+@media (min-width: 480px) {
+    header .blue {
+        background-color: #2ebaeb;
+    }
+
+    #contact {
+        width: 280px;
+        margin-left: calc(50% - 140px);
+    }
+}
+
+@media (max-width: 479px) {
+    #slogan .uppercase {
+        font-size: 38px;
+    }
+
+    #contact {
+        padding: 0 12px;
+    }
+
+    #under-development {
+        display: none;
+    }
 }

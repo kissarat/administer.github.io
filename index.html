@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>G-Service: Ремонт комп'ютерів</title>
@@ -8,34 +8,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
           rel="stylesheet"/>
     <link href="style.css" rel="stylesheet"/>
-    <script>
-        const start = Date.now()
-        var zen = /zen=(\w+)/.exec(document.cookie)
-        if (zen) {
-            zen = zen[1]
-        }
-        else {
-            zen = start.toString(36)
-            document.cookie = `zen=${zen}; path=/; max-age=` + (3600 * 24 * 365 * 10)
-        }
-        const id = 1243093044 ^ 2 ** 30
-        var ip;
-        function send() {
-            const spent = (Date.now() - start) / 1000
-            const stamp = new Date(parseInt(zen, 36)).toISOString()
-            navigator.sendBeacon(
-                atob('aHR0cHM6Ly9hcGkudGVsZWdyYW0ub3JnL2JvdDU0NzA3MzA0NTpBQUcza2NEaHFhNDZZVU1taVhmU3ZPZGhrNXVXRW90M0U1SQ==')
-                + `/sendMessage?chat_id=${id}&text=${spent}   [${ip}]  ${stamp} <${zen}> ${navigator.userAgent}`
-            )
-        }
-
-        function ipify(about) {
-            ip = about.ip
-        }
-
-        addEventListener('unload', send)
-    </script>
-    <script src="https://api.ipify.org?format=jsonp&callback=ipify"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"
+            integrity="sha256-1Q2q5hg2YXp9fYlM++sIEXOcUb8BRSDUsQ1zXvLBqmA=" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
@@ -51,12 +25,25 @@
 <div id="slogan">
     <div>Що ми можемо</div>
     <div class="uppercase">вам полагодити сьогодні?</div>
-    <a id="make" href="http://g-service.net">Записатися</a>
+    <form v-if="contact" id="contact">
+        <input v-model="email" type="email" placeholder="Email"/>
+        <input v-model="name" placeholder="Ім'я"/>
+        <textarea v-model="text" placeholder="Опис проблеми" rows="7"></textarea>
+        <button v-on:click="send()" type="button">Відправити</button>
+    </form>
+    <button v-else
+            type="button"
+            id="make"
+            v-on:click="contact = true">
+        Записатися або запитати
+    </button>
 </div>
 <div id="background"></div>
 <span id="developer">
     Developed by
     <a href="https://www.facebook.com/kissarat">Taras Labiak</a>
 </span>
+<script src="script.js"></script>
+<script src="https://api.ipify.org?format=jsonp&callback=ipify"></script>
 </body>
 </html>
