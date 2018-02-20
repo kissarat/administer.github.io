@@ -1,0 +1,157 @@
+/*
+ * @author Taras Labiak <kissarat@gmail.com>
+ */
+
+//colors
+$blue: #2ebaeb;
+$white: white;
+$black: black;
+$green: #00e0c6;
+$red: red;
+$color_deep_sea_green_approx: #134e63;
+
+//fonts
+$font_0: Lato;
+$font_1: Noto Sans;
+$font_2: sans-serif;
+
+//urls
+$url_0: url(https://ld-wp.template-help.com/wordpress_59024/wp-content/uploads/2016/09/slider-1.jpg);
+
+//@extend-elements
+//original selectors
+//#contact >input, #contact >textarea
+%extend_1 {
+  margin-top: 8px;
+  border: none;
+  padding: 4px;
+}
+
+body {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: $font_0, $font_1, $font_2;
+  color: $white;
+}
+
+header {
+  height: 160px;
+  color: $black;
+  .blue {
+    height: 44px;
+  }
+}
+
+#background {
+  position: fixed;
+  width: 100vw;
+  top: 160px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: $url_0 center;
+  background-size: cover;
+}
+
+#slogan {
+  margin-top: 114px;
+  font-size: 34px;
+  font-weight: 300;
+  text-align: center;
+  z-index: 1;
+  .uppercase {
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 37px;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+#make {
+  display: inline-block;
+  line-height: 72px;
+  width: 316px;
+  margin: 55px 0;
+}
+
+button {
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color: $green;
+  border: none;
+  color: $white;
+  cursor: pointer;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  margin-top: 55px;
+  button {
+    margin-top: 8px;
+    line-height: 28px;
+  }
+  > input {
+    @extend %extend_1;
+  }
+  > textarea {
+    @extend %extend_1;
+  }
+}
+
+#developer {
+  position: fixed;
+  display: none;
+  bottom: 10px;
+  left: calc(50% - 80px);
+}
+
+nav {
+  display: flex;
+  margin: 0 40px;
+  justify-content: space-between;
+}
+
+#under-development {
+  float: right;
+  margin-top: 44px;
+  color: $red;
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 34px;
+  color: $color_deep_sea_green_approx;
+  span {
+    color: $green;
+  }
+}
+
+@media(min-width: 480px) {
+  #contact {
+    width: 280px;
+    margin-left: calc(50% - 140px);
+  }
+  header .blue {
+    background-color: $blue;
+  }
+}
+
+@media(max-width: 479px) {
+  #contact {
+    padding: 0 12px;
+  }
+  #under-development {
+    display: none;
+  }
+  #slogan .uppercase {
+    font-size: 38px;
+  }
+}
